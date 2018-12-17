@@ -14,19 +14,19 @@ class Job
 public:
     Job();
     virtual ~Job();
-    BOOL CreateNewJob(const JobFunc& IN func, void* IN pParam);
-    BOOL SetJobFunc(const JobFunc& IN func, void* IN pParam);
+    BOOL CreateNewJob();
+    void SetJobFunc(const JobFunc &IN func, void *IN pParam);
     BOOL StartJob();
     BOOL SuspendJob();
     BOOL TerminateJob();
 private:
-    unsigned ThreadFunc(void* pParam);
+    static unsigned _stdcall ThreadFunc(void* pParam);
 private:
     JobParam m_JobData;
     uintptr_t m_ThreadHandle;
 
 private:
-    BOOL m_bIsStart;
+    BOOL m_bIsSuspend;
     BOOL m_bIsTerminated;
 };
 
