@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <ChartClick msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div>
+		<ChartClick/>
+		<Sort/>
+	</div>
 </template>
 
 <script>
-import ChartClick from './components/ChartClick.vue';
+import ChartClick from './components/echarts/ChartClick.vue';
+import Sort from './components/algorithm/Sort.vue';
 
 export default {
   name: 'app',
   components: {
-    ChartClick
+    ChartClick,
+    Sort,
   }
 }
 </script>
