@@ -5,7 +5,7 @@
 <script>
 import SortDemo from './sort.js';
 
-let sort = new SortDemo();
+
 
 export default {
 	name:'sort-vue',
@@ -13,7 +13,8 @@ export default {
 	{
 		this.$nextTick(function()
 		{
-			sort.init('sort');
+			let sort = new SortDemo('sort');
+			sort.init();
 			sort.run();
 		})
 	}
