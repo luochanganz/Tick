@@ -86,9 +86,27 @@ export default {
 					xAxisIndex:0,
 				},[x,y]);
 				let index = result[0];
+				console.log(result,x,y);
 				let xAxis =xAxisData[index];
 				console.log(xAxis);
 				self.setMarkLine(xAxis,chartInstance);
+		});
+
+
+		chartInstance.getZr().off('mousemove');//取消监听点击事件,也可以防止重复绑定
+		chartInstance.getZr().on('mousemove',function(param)
+		{
+			console.log(param);
+				let x = param.offsetX;
+				let y = param.offsetY;
+				let result = chartInstance.convertFromPixel({
+					seriesIndex:0,
+					xAxisIndex:0,
+				},[x,y]);
+				let index = result[0];
+				console.log(result,x,y);
+				let xAxis =xAxisData[index];
+				console.log(xAxis);
 		});
 	},
 	setMarkLine:function(xAxis,chartInstance)

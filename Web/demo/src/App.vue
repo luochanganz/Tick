@@ -1,18 +1,22 @@
 <template>
 	<div>
 		<ChartClick/>
-		<Sort/>
+    <ToolTipClick chartKey="a"></ToolTipClick>
+    <ToolTipClick chartKey="b"></ToolTipClick>
+    <ToolTipClick chartKey="c"></ToolTipClick>
+		<!-- <Sort/> -->
 	</div>
 </template>
 
 <script>
 import ChartClick from './components/echarts/ChartClick.vue';
+import ToolTipClick from './components/echarts/ToolTipClick.vue';
 import Sort from './components/algorithm/Sort.vue';
 
 export default {
   name: 'app',
   components: {
-    ChartClick,
+    ChartClick,ToolTipClick,
     Sort,
   }
 }

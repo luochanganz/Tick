@@ -1,8 +1,7 @@
 import * as THREE from 'three';
 
-export class Cmd{
+export class AnimateCmd{
 	meshList = [];
-	
 	order = []; // 操作步骤与顺序
 	index = 0;
 	stepTime = 0; //每一个操作的动画时间，默认为0
@@ -303,8 +302,8 @@ export default class DemoBase{
 
 	createSphere(num)
 	{
-		let geometry = new THREE.SphereGeometry( 0.1, 20, 20 );
-		let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+		let geometry = new THREE.BoxGeometry(0.1,0.1,0.1);
+		let material = new THREE.MeshBasicMaterial( { color: 0xfff0f0ff } );
 		this.meshSet.sphere = [];
 		for(let i=0;i<num;++i)
 		{
@@ -315,13 +314,27 @@ export default class DemoBase{
 		for(let name in this.meshSet)
 		{
 			let mesh = this.meshSet[name];
-			this.scene.add( mesh );
+			for(let meshKey in mesh)
+			{
+				this.scene.add( mesh[meshKey] );
+			}
 		}
 	}
 
 	getSphere(index)
 	{
 		return this.meshSet.sphere[index];
+	}
+
+	run()
+	{
+		let cmd = new AnimateCmd();
+		let self = this;
+		cmd.setMeshs(this.meshSet.sphere)
+			.excuteStart(1,function()
+		{
+			self.renderer.render( self.scene, self.camera );
+		});
 	}
 }
 
