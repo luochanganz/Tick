@@ -2,8 +2,7 @@
 	<div>
 		<ChartClick/>
     <ToolTipClick chartKey="a"></ToolTipClick>
-    <ToolTipClick chartKey="b"></ToolTipClick>
-    <ToolTipClick chartKey="c"></ToolTipClick>
+    <FlameChart />
 		<!-- <Sort/> -->
 	</div>
 </template>
@@ -11,12 +10,13 @@
 <script>
 import ChartClick from './components/echarts/ChartClick.vue';
 import ToolTipClick from './components/echarts/ToolTipClick.vue';
+import FlameChart from './components/echarts/FlameChart.vue';
 import Sort from './components/algorithm/Sort.vue';
 
 export default {
   name: 'app',
   components: {
-    ChartClick,ToolTipClick,
+    ChartClick,ToolTipClick,FlameChart,
     Sort,
   }
 }

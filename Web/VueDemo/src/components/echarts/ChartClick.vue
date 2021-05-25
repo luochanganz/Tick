@@ -1,5 +1,6 @@
 <template>
   <div>
+	  <h1>图表点击演示</h1>
 	  <div id="app" style="width:400px;height:300px;"></div>
 	  <div id="app2" style="width:400px;height:300px;"></div>
   </div>

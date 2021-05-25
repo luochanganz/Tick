@@ -27,3 +27,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+- ./src/components 各个演示组件
+- ./src/components/echarts echart演示
+    - FlameChart.vue：  echart绘制火焰图演示代码
+    - ChartClick.vue：  echart图表点击演示代码
+    - ToolTipClick.vue： ehart在tooltip中触发点击

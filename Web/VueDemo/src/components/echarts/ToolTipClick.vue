@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<h1>tooltip点击演示</h1>
 		<div style="font-size:22px;color:#f00;">当前点击的系列是{{activeSeries}}</div>
 		<div :id="chartKey" style="width:400px;height:300px;"></div>
 	</div>
